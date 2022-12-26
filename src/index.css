@@ -16,18 +16,18 @@ code {
   width: 0.7rem;
 }
 ::-webkit-scrollbar-track {
-  background: #ff4081;
+  background: #080808;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f48fb1;
+  background: #444041;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff4081;
+  background: #333232;
 }
 
 ::-webkit-scrollbar-track:hover {
-  background-color: #f48fb1;
+  background-color: #0f0f0f;
 }
 
 /* html {
