@@ -14,7 +14,7 @@ import ProductMainPage from "./components/admin/ProductMainPage";
 import AdminProtected from "./components/AdminProtected";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
-import Footer from "./components/Footer";
+
 import NavigationBar from "./components/NavigationBar";
 import Cart from "./components/pages/Cart";
 
@@ -151,7 +151,7 @@ const App = () => {
             <Loader />
           </>
           <SnackBars />
-          <Footer />
+          
         </ThemeProvider>
       </AppProvider>
     </>

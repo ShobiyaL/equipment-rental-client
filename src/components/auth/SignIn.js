@@ -56,6 +56,7 @@ import {
         };
         dispatch({ type: "startLoading" });
         const response = await SignInApi(body);
+        // console.log(response)
         dispatch({
           type: "signin",
           payload: { token: response.data.token, role: response.data.role },
@@ -64,13 +65,13 @@ import {
         if (response.data.type === "success") {
           dispatch({
             type: "snackBar",
-            payload: { msg: response.data.msg, type: "success" },
+            payload: { message: response.data.message, type: "success" },
           });
           navigate("/store");
         } else {
           dispatch({
             type: "snackBar",
-            payload: { msg: response.data.msg, type: "error" },
+            payload: { message: response.data.message, type: "error" },
           });
         }
       }
@@ -89,9 +90,9 @@ import {
         >
           <Container
             maxWidth="sm"
-            sx={{ py: 2, my: 2, border: "4px solid pink" }}
+            
           >
-            <Typography variant="h6" sx={{ color: "#ff4081" }} align="center">
+            <Typography variant="h6"  align="center">
               SignIn
             </Typography>
             <Grid container sx={{ justifyContent: "center" }}>
@@ -125,7 +126,7 @@ import {
               <Grid item xs={10} md={8}>
                 <Button
                   variant="contained"
-                  sx={{ background: "#ff4081", my: 1 }}
+                  sx={{ background: "#23A39F", my: 1 }}
                   endIcon={<LoginIcon />}
                   onClick={() => onSubmitHandler()}
                 >

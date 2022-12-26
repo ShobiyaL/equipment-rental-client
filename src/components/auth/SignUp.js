@@ -93,9 +93,9 @@ import {
         >
           <Container
             maxWidth="sm"
-            sx={{ py: 2, my: 2, border: "4px solid black" }}
+            
           >
-            <Typography variant="h6" sx={{ color: "#ff4081" }} align="center">
+            <Typography variant="h6"  align="center">
               Register User
             </Typography>
             <Grid container sx={{ justifyContent: "center" }}>
@@ -142,7 +142,8 @@ import {
               <Grid item xs={10} md={8}>
                 <Button
                   variant="contained"
-                  sx={{ background: "#ff4081", my: 1 }}
+                  align="center"
+                  sx={{ background: "#23A39F", my: 1 }}
                   endIcon={<InputIcon />}
                   onClick={() => onSubmitHandler()}
                 >

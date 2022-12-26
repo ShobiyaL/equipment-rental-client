@@ -22,7 +22,7 @@ const ReducerFunc = (state, actionObj) => {
       return {
         ...state,
         snackBarType: actionObj.payload.type,
-        snackBarMsg: actionObj.payload.msg,
+        snackBarMsg: actionObj.payload.message,
       };
     }
 

@@ -106,7 +106,7 @@ const NavigationBar = () => {
                 {MenuListPicker().map((item) => (
                   <MenuItem
                     key={item.name}
-                    sx={{ px: 4, color: "#ff4081" }}
+                    sx={{ px: 4 }}
                     component={Link}
                     to={item.path}
                   >

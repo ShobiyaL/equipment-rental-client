@@ -10,7 +10,7 @@ const SnackBars = () => {
   const handleClose = () => {
     dispatch({
       type: "snackBar",
-      payload: { msg: "" },
+      payload: { message: "" },
     });
   };
 
