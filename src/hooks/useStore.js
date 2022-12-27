@@ -4,9 +4,9 @@ import ReducerFunc from "./ReducerFunc";
 
 const useStore = () => {
   const [state, dispatch] = useReducer(ReducerFunc, initialValues, () => {
-    const tokenVal = localStorage.getItem("token");  
-    const roleVal = localStorage.getItem("role");
-    const cartVal = localStorage.getItem("cart");
+    const tokenVal = JSON.parse(localStorage.getItem("token"));
+    const roleVal = JSON.parse(localStorage.getItem("role"));
+    const cartVal = JSON.parse(localStorage.getItem("cart"));
 
     return {
       ...initialValues,
@@ -17,9 +17,9 @@ const useStore = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem("token", state.token);
-    localStorage.setItem("role",state.role);
-    localStorage.setItem("cart", state.cart);
+    localStorage.setItem("token", JSON.stringify(state.token));
+    localStorage.setItem("role", JSON.stringify(state.role));
+    localStorage.setItem("cart", JSON.stringify(state.cart));
   }, [state.token, state.role, state.cart]);
 
   return [state, dispatch];

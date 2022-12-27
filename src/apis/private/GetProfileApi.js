@@ -8,8 +8,9 @@ const GetProfileApi = async (token) => {
       },
     });
     return response;
-  } catch (e) {
-    return e.response;
+    
+  } catch (error) {
+    return error.response;
   }
 };
 export default GetProfileApi;

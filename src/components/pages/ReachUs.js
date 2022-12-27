@@ -18,7 +18,7 @@ import {
   
   const ReachUs = () => {
     const initialValues = {
-      name: "",
+      username: "",
       email: "",
       phone: "",
       query: "",
@@ -58,7 +58,7 @@ import {
   
       if (state.email && state.query) {
         const body = {
-          name: state.name,
+          username: state.username,
           email: state.email,
           phoneNo: state.phone,
           query: state.query,
@@ -69,13 +69,13 @@ import {
         if (response.data.type === "success") {
           dispatch({
             type: "snackBar",
-            payload: { msg: response.data.msg, type: "success" },
+            payload: { message: response.data.message, type: "success" },
           });
           setState(initialValues);
         } else {
           dispatch({
             type: "snackBar",
-            payload: { msg: response.data.msg, type: "error" },
+            payload: { message: response.data.message, type: "error" },
           });
         }
       }
@@ -87,11 +87,11 @@ import {
           container
           sx={{
             justifyContent: "center",
-            background: "#ad1457",
+            // background: "#CFD2CF",
             m: { xs: 0, md: 0 },
             my: { xs: 0, sm: 0 },
-            py: { xs: 4, md: 0 },
-            height: "30rem",
+            py: { xs: 2, md: 0 },
+            
             alignItems: { md: "center" },
           }}
         >
@@ -100,25 +100,16 @@ import {
             sx={{
               p: { xs: 0, md: 3 },
               m: { xs: 0, md: 1 },
-              color: "#fce4ec",
             }}
             xs={10}
             md={8}
           >
-            <Typography variant="h6">
-              EquipRents is One-Stop Shop where You can Rent Equipments Online.
-              Our Product Listings are huge{" "}
-              <Box sx={{ color: "#f48fb1", fontSize: "1rem" }} component="span">
-                (325+ products in 12 sections and different categories)
-              </Box>
-              , You should definitely check it out. You can Rent Equipments and
-              make Payment Online via RazorPay Payment Gateway
-            </Typography>
+           
             <Box
               sx={{
                 p: { xs: 0, lg: 2 },
-                my: 2,
-                border: "1px solid #fce4ec",
+                my: 0,
+                border: "1px solid ",
                 display: "block",
                 textDecoration: "none",
                 color: "inherit",
@@ -126,27 +117,17 @@ import {
               component={Link}
               to="/"
             >
-              <Typography align="center" sx={{ p: 2 }}>
+              <Typography align="center" >
                 Check All our Product Listings
               </Typography>
             </Box>
-            <Paper
-              sx={{
-                color: "#ff4081",
-                background: "inherit",
-                textDecoration: "overline",
-                m: { sm: 4 },
-              }}
-              elevation={0}
-            >
-              EquipRents - Dont Buy when You can Rent
-            </Paper>
+           
           </Grid>
         </Grid>
         <Box
           sx={{
             py: 2,
-            my: 3,
+            my: 0,
             "& .MuiTextField-root": {
               my: 2,
               width: { xs: "30ch", sm: "35ch", md: "40ch" },
@@ -155,10 +136,10 @@ import {
         >
           <Container
             maxWidth="xs"
-            sx={{ py: 2, my: 2, border: "4px solid pink" }}
+            sx={{ py: 2, my: 2, border: "2px solid " }}
           >
             {/* contactUs- Name,Email,PhoneNo,ProductEnquiry */}
-            <Typography variant="h6" sx={{ color: "#ff4081" }}>
+            <Typography variant="h6" >
               Leave us Your Message :
             </Typography>
             <TextField
@@ -166,8 +147,8 @@ import {
               label="Name"
               variant="standard"
               fullWidth
-              name="name"
-              value={state.name}
+              name="username"
+              value={state.username}
               onChange={(ev) => onChangeHandler(ev)}
             />
             <TextField
@@ -208,7 +189,7 @@ import {
             <Box>
               <Button
                 variant="contained"
-                sx={{ background: "#ff4081", my: 1 }}
+                sx={{ background: "#23A39F", my: 1 }}
                 endIcon={<SendRoundedIcon />}
                 onClick={() => onSubmit()}
               >
